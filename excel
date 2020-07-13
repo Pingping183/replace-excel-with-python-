@@ -1,1 +1,7 @@
-import numpy 
+import pandas
+#读入 （路径为path
+data=pd.read_excel("path",sheet_name="Sheet1") #默认表名是“sheet1”
+#筛选  某项等于/大于/包含
+sel_data=data.col[(data["col_name1"]=="eg1")|data["col_name2"].str.contains("eg2")]
+
+
