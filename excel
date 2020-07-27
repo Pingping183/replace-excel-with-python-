@@ -3,5 +3,7 @@ import pandas
 data=pd.read_excel("path",sheet_name="Sheet1") #默认表名是“sheet1”
 #筛选  某项等于/大于/包含
 sel_data=data.col[(data["col_name1"]=="eg1")|data["col_name2"].str.contains("eg2")]
-
-
+    筛选并求和
+    筛选并计数
+sum1=data.col[(data["col_name1"]=="eg1"),["col_name1","col_name2"]].sort(["col_name1"]).price.sum()
+cou1=data.col[(data["col_name1"]=="eg1"),["col_name1","col_name2"]].sort(["col_name1"]).price.count()
