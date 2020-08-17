@@ -1,6 +1,16 @@
-import pandas
-#读入 （路径为path
+import pandas as pd
+#1、读入 （路径为path
 data=pd.read_excel("path",sheet_name="Sheet1") #默认表名是“sheet1”
+#2、创建数据据表
+df=pd.DataFrame({"x1":[1,2,3,4,5,6],
+                 "x2":['z','x','c','v','b','n'],
+                 "x3":pd.date_range('20200817',period=6),
+                 "price":[1200,np.nan,2133,5433,np.nan,4432]}, #有日期数据、缺失数据
+                 columns=['x1','x2','x3','x4','x5','x6'])      #列名
+#3、检查数据表
+df.shape #几行几列
+
+
 #筛选  某项等于/大于/包含
 sel_data=data.col[(data["col_name1"]=="eg1")|data["col_name2"].str.contains("eg2")]
     筛选并求和
